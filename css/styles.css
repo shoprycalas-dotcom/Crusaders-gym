@@ -1535,3 +1535,40 @@ body::after {
         padding: 8px;
     }
 }
+/* Responsive table wrapper for mobile */
+.table-wrapper {
+    overflow-x: auto;          /* Enables horizontal scroll/swipe */
+    -webkit-overflow-scrolling: touch; /* Smoother swipe on iOS */
+    margin: 20px 0;
+    border-radius: 8px;        /* Optional: nice rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Optional: subtle shadow for depth */
+}
+
+/* Make time column sticky so it's always visible while scrolling */
+.timetable th:first-child,
+.timetable td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #c00;    /* Red header for time column */
+    color: white;
+    z-index: 1;
+    min-width: 120px;          /* Ensures time slot text fits */
+}
+
+.timetable td:first-child {
+    background-color: #111;    /* Dark for time cells on scroll */
+}
+
+/* Improve mobile readability */
+@media (max-width: 768px) {
+    .timetable {
+        font-size: 0.9em;      /* Slightly smaller text */
+        min-width: 800px;      /* Forces scroll if screen is narrower */
+    }
+
+    .mobile-note {
+        font-style: italic;
+        color: #ccc;
+        text-align: center;
+    }
+}
