@@ -431,7 +431,7 @@ body::after {
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 300;
-  color: var(--color-gray-300);
+  color: var(--color-white-300);
   max-width: 520px;
   margin-bottom: 2.5rem;
   line-height: 1.7;
