@@ -39,11 +39,15 @@
     if (!toggle || !menu) return;
 
     toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      toggle.classList.toggle('active');
-      toggle.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
+  const isOpen = !menu.classList.contains('open');  // Check current state before toggle
+
+  menu.classList.toggle('open');
+  toggle.classList.toggle('active');
+  toggle.setAttribute('aria-expanded', isOpen);
+
+  // Use class instead of inline style for body lock (better for CSS overrides)
+  document.body.classList.toggle('menu-open', isOpen);
+});
 
     // Close on link click
     menu.querySelectorAll('.nav-links a').forEach((link) => {
